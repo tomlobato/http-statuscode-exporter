@@ -1,0 +1,8 @@
+[Unit]
+Description=NetCat Nginx Status Codes Exporter
+[Service]
+User=root
+ExecStart=/usr/local/sbin/nc_nginx_status_codes
+Restart=always
+[Install]
+WantedBy=multi-user.target
