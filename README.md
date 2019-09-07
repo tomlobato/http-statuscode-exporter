@@ -1,3 +1,6 @@
+Sample Grafana Dashboard:
+![Sample Grafana Dashboard](https://raw.githubusercontent.com/tomlobato/http-statuscode-exporter/master/ScreenShot.png)
+
 
 # Install on Ubuntu
 
