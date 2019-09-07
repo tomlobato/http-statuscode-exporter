@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ `which logtail2` == '' ]]; then
+  echo -e "logtail not installed!\nIn debian based distros try 'apt install logtail'."
+  exit 1
+fi
+
+cd /var/log/nginx
+#cd /var/log/apache2
+
+while true; do
+	(echo -e 'HTTP/1.1 200 OK\r\n';
+	for i in access*.log; do
+		j=${i/.log/};
+		logtail2 $i | awk '{print $9}' |sort | uniq -c | \
+			awk 'BEGIN{OFS="";} {print "nc_nginx_status_codes{file=\"","'$j'","\",code=\"",$2,"\"} ",$1}';
+	done) \
+		| nc -q0 -lp 9144;
+done > /dev/null
