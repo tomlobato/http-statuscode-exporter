@@ -31,3 +31,7 @@ nc_nginx_status_codes{file="access_monit",code="404"} 2
 
 # Grafana Dashbaord
 Add a rule in Prometheus pointing to port 9144 of the server and import ```https://raw.githubusercontent.com/tomlobato/http-statuscode-exporter/master/grafana-dashboard.json``` into your Grafana.
+
+# TODO
+
+- Add alert for when rate 4XX / 2XX increases.
