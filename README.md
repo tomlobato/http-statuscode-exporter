@@ -1,5 +1,3 @@
-# http-statuscode-exporter
-Web status code exporter for Prometheus + Grafana Dashboard. Shell script based.
 
 # Install on Ubuntu
 
